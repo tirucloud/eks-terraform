@@ -11,6 +11,7 @@ netstat -tunlp
 
 aws eks update-kubeconfig --name tiru-cluster --region us-east-1
 kubectl get nodes
-kubectl apply -f abc.yml
+kubectl apply -f k8s/dep.yml
+kubectl apply -f k8s/svc.yml
 kubectl get svc
 ```
