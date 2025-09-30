@@ -1,12 +1,12 @@
 provider "aws" {
-  region = "us-east-1"
+  region = var.aws_region
 }
 
 resource "aws_vpc" "tiru_vpc" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block = var.aws_vpc_cidr
 
   tags = {
-    Name = "tiru-vpc"
+    Name = var.aws_vpc_name
   }
 }
 
