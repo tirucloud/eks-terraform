@@ -1,3 +1,5 @@
+# TODO
+
 - Update kubeconfig for kubectl access to the EKS cluster
 - Delete Kubernetes resources (deployment and service) to remove LoadBalancer dependencies
 - Run terraform destroy to delete AWS resources
