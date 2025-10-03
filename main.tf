@@ -11,7 +11,7 @@ resource "aws_vpc" "tiru_vpc" {
 }
 
 resource "aws_subnet" "tiru_subnet" {
-  count = 2
+  count                   = 2
   vpc_id                  = aws_vpc.tiru_vpc.id
   cidr_block              = cidrsubnet(aws_vpc.tiru_vpc.cidr_block, 8, count.index)
   availability_zone       = element(["us-east-1a", "us-east-1b"], count.index)
@@ -111,7 +111,7 @@ resource "aws_eks_node_group" "tiru" {
   instance_types = ["t2.medium"]
 
   remote_access {
-    ec2_ssh_key = var.ssh_key_name
+    ec2_ssh_key               = var.ssh_key_name
     source_security_group_ids = [aws_security_group.tiru_node_sg.id]
   }
 }
